@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+  
+</head>
+<body>
+    <div style="width:90%; margin:0 auto"> 
+       <table id="myDatatable">
+            <thead>
+                <tr>
+                    <th>产品名称</th>
+                    <th>品牌</th>
+                    <th>数量</th>
+                    <th>型号</th>
+                    <th>一级类目</th>
+                    <th>二级类目</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <script src="~/scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="~/scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var oTable = $('#myDatatable').DataTable({
+                "ajax": {
+                    "url": '/home/GetProperty',
+                    "type": "get",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "PName", "autoWidth": true },
+                    { "data": "Brand", "autoWidth": true },
+                    { "data": "Number", "autoWidth": true },
+                    { "data": "Model", "autoWidth": true },
+                    { "data": "OneCategory", "autoWidth": true },
+                    { "data": "TwoCategory", "autoWidth": true }
+                    
+                ]
+            })
+        })
+     </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="XLTDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="ProId" />
+          </Key>
+          <Property Name="ProId" Type="int" Nullable="false" />
+          <Property Name="PName" Type="varchar" MaxLength="66" />
+          <Property Name="Brand" Type="varchar" MaxLength="66" />
+          <Property Name="Number" Type="varchar" MaxLength="66" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="OneCategory" Type="varchar" MaxLength="50" />
+          <Property Name="TwoCategory" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="XLTDatabaseModelStoreContainer">
+          <EntitySet Name="Property" EntityType="Self.Property" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XLTDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="ProId" />
+          </Key>
+          <Property Name="ProId" Type="Int32" Nullable="false" />
+          <Property Name="PName" Type="String" MaxLength="66" FixedLength="false" Unicode="false" />
+          <Property Name="Brand" Type="String" MaxLength="66" FixedLength="false" Unicode="false" />
+          <Property Name="Number" Type="String" MaxLength="66" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OneCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TwoCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="XLTDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Property" EntityType="Self.Property" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XLTDatabaseModelStoreContainer" CdmEntityContainer="XLTDatabaseEntities">
+          <EntitySetMapping Name="Property">
+            <EntityTypeMapping TypeName="XLTDatabaseModel.Property">
+              <MappingFragment StoreEntitySet="Property">
+                <ScalarProperty Name="ProId" ColumnName="ProId" />
+                <ScalarProperty Name="PName" ColumnName="PName" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="OneCategory" ColumnName="OneCategory" />
+                <ScalarProperty Name="TwoCategory" ColumnName="TwoCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
