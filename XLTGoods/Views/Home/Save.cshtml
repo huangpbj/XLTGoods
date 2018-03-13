@@ -1,0 +1,48 @@
+﻿@model XLTGoods.Models.Property
+<h2>编辑</h2>
+@using (Html.BeginForm("save", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.ProId > 0)
+    {
+        @Html.HiddenFor(a => a.ProId)
+    }
+    <div class="form-group">
+        <label>产品名称</label>
+        @Html.TextBoxFor(a => a.PName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.PName)
+    </div>
+
+    <div class="form-group">
+        <label>品牌</label>
+        @Html.TextBoxFor(a => a.Brand, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Brand)
+    </div>
+
+    <div class="form-group">
+        <label>数量</label>
+        @Html.TextBoxFor(a => a.Number, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Number)
+    </div>
+
+    <div class="form-group">
+        <label>型号</label>
+        @Html.TextBoxFor(a => a.Model, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Model)
+    </div>
+
+    <div class="form-group">
+        <label>一级类目</label>
+        @Html.TextBoxFor(a => a.OneCategory, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.OneCategory)
+    </div>
+
+    <div class="form-group">
+        <label>二级类目</label>
+        @Html.TextBoxFor(a => a.TwoCategory, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.TwoCategory)
+    </div>
+
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}
