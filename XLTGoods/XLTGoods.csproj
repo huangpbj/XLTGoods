@@ -195,6 +195,8 @@
     <Content Include="scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="scripts\jquery.validate.js" />
     <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +243,7 @@
     <Content Include="scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Home\Save.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

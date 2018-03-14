@@ -16,6 +16,7 @@
 </head>
 <body>
     <div style="width:90%; margin:0 auto" class="tablecontainer"> 
+    <a class="popup btn btn-primary" href="/home/save/0" style="margin-bottom:20px; margin-top:20px;">加入新物资</a>
        <table id="myDatatable">
             <thead>
                 <tr>
@@ -34,8 +35,11 @@
 
     <script src="~/scripts/jquery-3.1.1.min.js"></script>
     <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <script src="~/scripts/jquery-ui-1.12.1.min.js"></script>
+
+
     <script>
         $(document).ready(function () {
             var oTable = $('#myDatatable').DataTable({

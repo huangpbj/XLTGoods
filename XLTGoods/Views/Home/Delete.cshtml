@@ -1,0 +1,39 @@
+﻿@model XLTGoods.Models.Property
+<h2>删除物资</h2>
+@using (Html.BeginForm("delete", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.ProId)
+    <div class="form-group">
+        <label>产品名称</label>
+        <p>@Model.PName</p>
+    </div>
+
+    <div class="form-group">
+        <label>品牌</label>
+        <p>@Model.Brand</p>
+    </div>
+
+    <div class="form-group">
+        <label>数量</label>
+        <p>@Model.Number</p>
+    </div>
+
+    <div class="form-group">
+        <label>型号</label>
+        <p>@Model.Model</p>
+    </div>
+
+    <div class="form-group">
+        <label>一级分类</label>
+        <p>@Model.OneCategory</p>
+    </div>
+
+    <div class="form-group">
+        <label>二级分类</label>
+        <p>@Model.TwoCategory</p>
+    </div>
+
+    <div>
+        <input type="submit" value="Delete" />
+    </div>
+}
