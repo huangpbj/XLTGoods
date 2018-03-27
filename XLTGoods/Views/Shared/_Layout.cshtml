@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="jumbotron" style="margin-bottom: 0px;padding-top: 28px;padding-bottom: 6px; background-color:#c8dbec;">
+        <h1>北京新联铁物资管理系统</h1>
+        <p>管理固定资产和一般易耗品</p>
+    </div>
+
+     <div class="container" style="margin-left:0px;margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;">
+       
+        <table border="1" style="width:1350px; font-family:Arial">
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <h3>物资列表</h3>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:250px" >
+                    <h3 style="text-align:center">Menu</h3>
+                    <h4 style="text-align:center">@Html.ActionLink("物资列表", "Index")</h4> 
+
+                </td>
+                <td style="width:1100px">
+                    @RenderBody()
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center; font-size:x-small">
+                    <h5>版权：2018 year Program Technologes</h5>
+                </td>
+            </tr>
+        </table>
+        </div>
+
+
+
+</body>
+</html>
